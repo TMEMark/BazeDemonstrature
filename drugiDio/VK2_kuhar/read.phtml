@@ -1,0 +1,78 @@
+
+<?php 
+// OBAVEZNO UKLJUČITI U SVAKU phtml datoteku
+include_once 'konfiguracija.php';
+?>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baze CRUD: Read <?=$imeTablice?></title>
+    <link rel="stylesheet" href="<?=$putanja?>css/foundation.css">
+    <link rel="stylesheet" href="<?=$putanja?>css/app.css">
+  </head>
+<body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <h1>Baze CRUD Read <?=$imeTablice?></h1>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <div class="callout">
+            <a href="<?=$create?>" class="button success expanded">Dodaj</a>
+            <table>
+              <thead>
+                <tr>
+                  <!-- ovdje navesti ćelije zaglavlja tablice -->
+                  <!-- Student mijenja OD ove linije -->
+                  <th>Ime</th>
+                  <th>Prezime</th>
+                  <th>Razina</th>
+                  <!-- Student mijenja DO ove linije -->
+                  <th>Akcija</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Ovaj dio foreach se ne mijenja, ostaje uvijek isti -->
+            <?php foreach($tablica as $red): ?>
+                <tr>
+                  <!-- Atributi tablice dostupni na varijabli $red u formi $red->imeAtributa -->
+                  <!-- Student mijenja OD ove linije -->
+                  <!-- $red-> naziv atributa iz tablice u bazi koji želite prikazat na sučelju -->
+                  <td><?=$red->ime?></td>
+                  <td><?=$red->prezime?></td>
+                  <td><?=$red->razina?></td>
+                  <!-- Student mijenja DO ove linije -->
+                  <td>
+                    <!-- Poveznica za promjenu (nema potrebe mijenjati) -->
+                    <a href="<?=$update . '&sifra=' . $red->sifra ?>">Promjeni</a> 
+                    <!-- Poveznica za brisanje (nema potrebe mijenjati) -->
+                    <a href="<?=$delete . '&sifra=' . $red->sifra?>">Obriši</a>
+                  </td>
+                </tr>
+            <?php endforeach;?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="<?=$putanja?>js/vendor/jquery.js"></script>
+    <script src="<?=$putanja?>js/vendor/what-input.js"></script>
+    <script src="<?=$putanja?>js/vendor/foundation.js"></script>
+    <script src="<?=$putanja?>js/app.js"></script>
+  </body>
+</html>
+
+
+$red = array(
+  "kuhar" => {
+    sifra,
+    ime,
+    prezime
+  }
+)

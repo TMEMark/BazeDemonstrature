@@ -1,0 +1,68 @@
+
+<?php 
+// OBAVEZNO UKLJUČITI U SVAKU phtml datoteku
+include_once 'konfiguracija.php';
+?>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baze CRUD: Create <?=$imeTablice?></title>
+    <link rel="stylesheet" href="<?=$putanja?>css/foundation.css">
+    <link rel="stylesheet" href="<?=$putanja?>css/app.css">
+  </head>
+<body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <h1>Baze CRUD Create <?=$imeTablice?></h1>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <div class="callout">
+            <form action="<?=$createPost?>" method="post">
+            <!-- Student mijenja OD ove linije -->
+            <!-- Tu sam dodajete label i input elemente -->
+            <!-- Atributi id u input elementu i for u label elementu moraju imat iste vrijednosti -->
+            <!-- Atribut name mora imat vrijednost jednaku naziva stupca u tablici u bazi -->
+            <label for="ime">Ime</label>
+            <input type="text" id="ime" name="ime">
+
+            <label for="prezime">Prezime</label>
+            <input type="text" id="prezime" name="prezime">
+
+            <label for="razina">razina</label>
+            <input type="text" id="razina" name="razina">
+            <!-- Student mijenja DO ove linije -->
+            <div class="grid-x grid-padding-x">
+              <div class="large-6 cell">
+                <a href="<?=$read?>" class="button alert expanded">Odustani</a>
+              </div>
+              <div class="large-6 cell">
+                <input type="submit" class="button success expanded" value="Unesi">
+              </div>
+            </div>
+            <!-- OBAVEZNO UKULJUČITI u create, update i delete -->
+            <input type="hidden" name="student" value="<?=$student?>">
+            <input type="hidden" name="baza" value="<?=$baza?>">
+            <input type="hidden" name="tablica" value="<?=$tablica?>">
+            <input type="hidden" name="direktorij" value="<?=$direktorij?>">
+            <!-- KRAJ OBAVEZNO UKULJUČITI u create, update i delete -->
+            </form>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+
+
+    <script src="<?=$putanja?>js/vendor/jquery.js"></script>
+    <script src="<?=$putanja?>js/vendor/what-input.js"></script>
+    <script src="<?=$putanja?>js/vendor/foundation.js"></script>
+    <script src="<?=$putanja?>js/app.js"></script>
+  </body>
+</html>

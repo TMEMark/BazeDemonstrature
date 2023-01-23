@@ -1,0 +1,19 @@
+Spojite se pomoći Filezilla programa te unutar www direktorija (jednom) kreirajte direktorij baze
+U tom direktoriju baze se moraju kreirati poddirektoriji (po jedan za svaki zadatak)
+Za svaki zadatak potrebno je pristupiti sljedećem redosljedu uređivanja datoteka
+1. konfiguracija.php
+ - čitati uputu i definirati potrebne podatke
+2. read.phtml
+ - čitati uputi koji dio stranice mijenjati te prilagoditi željeni prikaz
+3. create.phtml
+ - čitati uputi koji dio stranice mijenjati te prilagoditi željeni prikaz
+4. update.phtml
+ - čitati uputi koji dio stranice mijenjati te prilagoditi željeni prikaz
+5. delete.phtml
+ - čitati uputi koji dio stranice mijenjati te prilagoditi željeni prikaz
+
+
+Datoteke index.php i naputak.txt nije potrebno uređivati
+
+Po uspješnom uređivanju i prebacivanju svih datoteka na server CRUD aplikacija je dostupna na
+https://oziz.ffos.hr/nastava20212022/STUDENT_21/baze/IME_DIREKTORIJA/

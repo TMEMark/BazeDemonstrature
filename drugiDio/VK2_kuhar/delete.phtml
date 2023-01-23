@@ -1,0 +1,56 @@
+
+<?php 
+// OBAVEZNO UKLJUČITI U SVAKU phtml datoteku
+include_once 'konfiguracija.php';
+?>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baze CRUD: Delete  <?=$imeTablice?></title>
+    <link rel="stylesheet" href="<?=$putanja?>css/foundation.css">
+    <link rel="stylesheet" href="<?=$putanja?>css/app.css">
+  </head>
+<body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <h1>Baze CRUD Delete  <?=$imeTablice?></h1>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <div class="callout">
+            <form action="<?=$deletePost?>" method="post">
+              <!-- Student mijenja OD ove linije -->
+              <!-- Sam dodajte sve varijable kao na primjeru koje ste ispisali u red dijelu i ispred neki tekst može ovaj -->
+              Želite li sigurno obrisati <?=$red->ime?> <?=$red->prezime?> , <?=$red->razina?> ?
+              <!-- Student mijenja DO ove linije -->
+              <div class="grid-x grid-padding-x">
+                <div class="large-6 cell">
+                  <a href="<?=$read?>" class="button alert expanded">Odustani</a>
+                </div>
+                <div class="large-6 cell">
+                  <input type="submit" class="button success expanded" value="Obriši">
+                </div>
+              </div>
+              <input type="hidden" name="sifra" value="<?=$red->sifra?>">
+              <!-- OBAVEZNO UKULJUČITI u create, update i delete -->
+              <input type="hidden" name="student" value="<?=$student?>">
+              <input type="hidden" name="baza" value="<?=$baza?>">
+              <input type="hidden" name="tablica" value="<?=$tablica?>">
+              <input type="hidden" name="direktorij" value="<?=$direktorij?>">
+              <!-- KRAJ OBAVEZNO UKULJUČITI u create, update i delete -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="<?=$putanja?>js/vendor/jquery.js"></script>
+    <script src="<?=$putanja?>js/vendor/what-input.js"></script>
+    <script src="<?=$putanja?>js/vendor/foundation.js"></script>
+    <script src="<?=$putanja?>js/app.js"></script>
+  </body>
+</html>
